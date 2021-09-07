@@ -24,7 +24,7 @@ nameDict = {1:"dog", 2:"cat", 3:"mouse"}
 print(nameString, type(nameString))
 print(nameInteger, type(nameInteger))
 print(nameFloat, type(nameFloat))
-print(nameBytes, type(nameBytes))
+print(type(nameBytes), nameBytes)
 print(nameList, type(nameList))
 print(nameTuple, type(nameTuple))
 print(nameTuple2, type(nameTuple2))
@@ -33,14 +33,34 @@ print(nameSet2, type(nameSet2))
 print(nameFrozenSet, type(nameFrozenSet))
 print(nameDict, type(nameDict))
 
-# 11) Создать 2 переменные String, создать переменную в которой суммируете эти переменные. Вывести в консоль.
-#
-# 12) Создать 2 переменные Integer, создать переменную в которой суммируете эти переменные. Вывести в консоль.
-#
-# 13) Создать переменную в которой Разделите эти переменные Int. Вывести в консоль.
-# 14) Создать переменную в которой Умножите эти переменные Int. Вывести в консоль.
-# 15) Создать переменную в которой Разделите без остатка эти переменные Int. Вывести в консоль.
-# 16) Создать переменную в которой надо присвоить остаток от деления этих переменные Int. Вывести в консоль.
-# 17) (7 + 12)  3 + 7 * 4 - 44 / 2  4 расставить точки так чтобы получилось 6884.25. Вывести в консоль.
-#
-# Выгрузить файл в Git репозиторий.
+    # 11) Создать 2 переменные String, создать переменную в которой суммируете эти переменные. Вывести в консоль.
+nameFirstString = '12345'
+nameSecondString = 'Vlas'
+nameSumString = nameFirstString + nameSecondString
+print(nameSumString)
+
+    # 12) Создать 2 переменные Integer, создать переменную в которой суммируете эти переменные. Вывести в консоль.
+nameFirstInt = 54321
+nameSecondInt = 12345
+nameSumInt = nameFirstInt + nameSecondInt
+print(nameSumInt)
+
+    # 13) Создать переменную в которой Разделите эти переменные Int. Вывести в консоль.
+nameDivInt = nameFirstInt / nameSecondInt
+print(nameDivInt)
+
+    # 14) Создать переменную в которой Умножите эти переменные Int. Вывести в консоль.
+nameMultiInt = nameFirstInt * nameSecondInt
+print(nameMultiInt)
+
+    # 15) Создать переменную в которой Разделите без остатка эти переменные Int. Вывести в консоль.
+nameFloorDivInt = nameFirstInt // nameSecondInt
+print(nameFloorDivInt)
+
+    # 16) Создать переменную в которой надо присвоить остаток от деления этих переменнх Int. Вывести в консоль.
+nameModInt = nameFirstInt % nameSecondInt
+print(nameModInt)
+
+    # 17) )))))
+
+
