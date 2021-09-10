@@ -11,9 +11,9 @@ if a > 3:
 param = 1
 print(str(param), 'Vlas', 'Влас', str(True), '*&#@^$')
 
-while True:
-    name = input()
-    print('Your input word =', name)
+# while True:
+#     name = input()
+#     print('Your input word =', name)
 
 # Lesson 2
 
