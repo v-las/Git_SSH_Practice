@@ -1,8 +1,10 @@
 # Lesson 2
+
 b_true = True
 b_false = False
+
 v_1 = 3
-v_2 = 5
+v_2 = 3
 print(v_1 == v_2)   # Равно
 print(v_1 != v_2)   # Неравно
 print(v_1 > v_2)

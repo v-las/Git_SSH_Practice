@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="da8aae6f-9acc-4b92-97c1-78903bc1fe50" name="Changes" comment="" />
+    <list default="true" id="da8aae6f-9acc-4b92-97c1-78903bc1fe50" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Homeworks/HW_01/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Homeworks/HW_01/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Homeworks/HW_01/.idea/HW_01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homeworks/HW_01/.idea/HW_01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Homeworks/HW_01/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homeworks/HW_01/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Homeworks/HW_01/.main.py.swp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Homeworks/HW_01/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homeworks/HW_01/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Homeworks/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homeworks/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/.idea/pythonProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +36,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -53,16 +72,5 @@
       <updated>1631308123902</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
