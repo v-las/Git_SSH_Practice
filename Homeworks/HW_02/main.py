@@ -95,9 +95,10 @@ print('---', '---', sep='\n')
 #     которое (меньше/больше/равно) сгенерированному числу"
 
 import random
-print('У Вас есть 5 попыток угадать случайное число.', 'Введите число от 1 до 5: ', sep='\n')
-e = int(input())
+
+print('У Вас есть 5 попыток угадать случайное число.', 'Загадайте число от 1 до 5: ', sep='\n')
 x = random.randint(1, 5)
+e = int(input())
 count = 5
 for attempt in range(4):
     if e > x:
@@ -119,6 +120,7 @@ for attempt in range(4):
         break
 else:
     print('К сожалению, Вам не удалось угадать случайное число :(')
+print('---', '---', sep='\n')
 
 
 # todo
@@ -129,32 +131,81 @@ else:
 #     3. Выводить должна "Вы вели число = (введённое число)
 #     которое (меньше/больше/равно и меньше/больше/равно) сгенерированному числу"
 
-# import random
-# print('У Вас есть 5 попыток угадать случайное число.', 'Введите число от 1 до 5: ', sep='\n')
-# e = int(input())
-# x = random.randint(1, 5)
-# count = 5
-# for attempt in range(4):
-#     if e > x:
-#         count -= 1
-#         print('Вы ввели число ' + str(e) + ', которое больше случайного числа ' +
-#               str(x) + '. Осталось попыток: ' + str(count))
-#         x = random.randint(1, 5)
-#         e = int(input())
-#     elif e < x:
-#         count -= 1
-#         print('Вы ввели число ' + str(e) + ', которое меньше случайного числа ' +
-#               str(x) + '. Осталось попыток: ' + str(count))
-#         x = random.randint(1, 5)
-#         e = int(input())
-#         continue
-#     if e == x:
-#         print('Поздравляю! Вы ввели число ' + str(e) + ', которое равно случайному числу '
-#               + str(x) + '! Количество попыток: ' + str(6 - count))
-#         break
-# else:
-#     print('К сожалению, Вам не удалось угадать случайное число :(')
-#
+import random
+
+print('Испытайте удачу у нас!', 'Пока бесплатно!', 'У Вас есть 10 попыток угадать случайное число.',
+      'Загадайте число от 1 до 5: ', sep='\n')
+x = random.randint(1, 5)
+y = random.randint(1, 5)
+e = int(input())
+count = 10
+
+for attempt in range(9):
+    if x < e < y:
+        count -= 1
+        print('Вы загадали число ' + str(e) + ', которое больше случайного числа ' + str(x) +
+              ', но меньше случайного числа ' + str(y) + '. Осталось попыток: ' + str(count))
+        x = random.randint(1, 5)
+        y = random.randint(1, 5)
+        e = int(input())
+    elif x > e > y:
+        count -= 1
+        print('Вы загадали число ' + str(e) + ', которое меньше случайного числа ' + str(x) +
+              ', но больше случайного числа ' + str(y) + '. Осталось попыток: ' + str(count))
+        x = random.randint(1, 5)
+        y = random.randint(1, 5)
+        e = int(input())
+    elif x < e > y:
+        count -= 1
+        print('Вы загадали число ' + str(e) + ', которое больше случайных чисел ' + str(x) +
+              ' и ' + str(y) + '. Осталось попыток: ' + str(count))
+        x = random.randint(1, 5)
+        y = random.randint(1, 5)
+        e = int(input())
+    elif x > e < y:
+        count -= 1
+        print('Вы загадали число ' + str(e) + ', которое меньше случайных чисел ' + str(x) +
+              ' и ' + str(y) + '. Осталось попыток: ' + str(count))
+        x = random.randint(1, 5)
+        y = random.randint(1, 5)
+        e = int(input())
+    elif x < e == y:
+        count -= 1
+        print('Вы загадали число ' + str(e) + ', которое больше случайного числа ' + str(x) +
+              ', но равно случайному числу ' + str(y) + '. Осталось попыток: ' + str(count))
+        x = random.randint(1, 5)
+        y = random.randint(1, 5)
+        e = int(input())
+    elif x == e < y:
+        count -= 1
+        print('Вы загадали число ' + str(e) + ', которое равно случайному числу ' + str(x) +
+              ', но меньше случайного числа ' + str(y) + '. Осталось попыток: ' + str(count))
+        x = random.randint(1, 5)
+        y = random.randint(1, 5)
+        e = int(input())
+    elif x > e == y:
+        count -= 1
+        print('Вы загадали число ' + str(e) + ', которое меньше случайного числа ' + str(x) +
+              ', но равно случайному числу ' + str(y) + '. Осталось попыток: ' + str(count))
+        x = random.randint(1, 5)
+        y = random.randint(1, 5)
+        e = int(input())
+    elif x == e > y:
+        count -= 1
+        print('Вы загадали число ' + str(e) + ', которое равно случайному числу ' + str(x) +
+              ', но больше случайного числа ' + str(y) + '. Осталось попыток: ' + str(count))
+        x = random.randint(1, 5)
+        y = random.randint(1, 5)
+        e = int(input())
+        continue
+    if x == e == y:
+        print('Оу, Удача! Поздравляю! Вы загадали число ' + str(e) +
+              ', которое равно случайным числам ' + str(x) +
+              ' и ' + str(y) + '! Количество попыток: ' + str(11 - count))
+        break
+else:
+    print('К сожалению, Вам не удалось угадать случайное число :(',
+          'Не везет в питоне - повезёт в любви!', sep='\n')
 
 #     ----
 # В заданиях 7, 8, 9, сами выберите какие условные операторы и сравнения использовать.
