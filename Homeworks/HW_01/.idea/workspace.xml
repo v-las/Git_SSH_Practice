@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8c0f03b-b14a-49a3-a8f4-1d5f82994933" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HW_01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HW_01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.main.py.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Python_Practice/pythonProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_Practice/pythonProject/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Python_Practice/pythonProject/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_Practice/pythonProject/.idea/pythonProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Python_Practice/pythonProject/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_Practice/pythonProject/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HW_02/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../HW_02/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Python_Practice/pythonProject1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_Practice/pythonProject1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Python_Practice/pythonProject1/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_Practice/pythonProject1/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
