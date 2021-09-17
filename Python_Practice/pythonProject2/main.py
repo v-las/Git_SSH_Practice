@@ -94,21 +94,3 @@ for i in test_list:
 stop = time.time()
 duration = stop - start
 print('duration = ', duration)
-
-
-
-# import time
-#
-# count = 0
-# test_list = [1, 2, 3, 4, 5, 6, 34, 72, 32, 14, 52, 92, 36, 57]
-# test_list_2 = []
-# print('test_list_2_before = ', test_list_2)
-# while True:
-#     count += 1
-#     if 100 < count <= 150:
-#         time.sleep(.200)
-#         print('slow:', count)
-#         continue
-#     print('fast:', count)
-#     if count >= 200:
-#         break
