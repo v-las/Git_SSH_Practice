@@ -6,7 +6,7 @@
 #                 "конвертированная сумма в USD = int"
 #     3. Валюту пользователя определите сами.
 
-your_money = int(input())
-your_money = your_money / 72.88
+your_money = float(input())
+convert_money = your_money / 72.88
 print('Ты ввёл ', your_money, 'RUB')
-print('конвертированная сумма в USD = ', your_money)
+print('конвертированная сумма в USD = ', round(convert_money, 2))
