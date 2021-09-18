@@ -14,16 +14,37 @@
 #                 "Вы ввели не число. Введите число." Если введены буквы.
 #                 "Вы ввели пустое поле. Введите число." Если введено пустое значение.
 #     4. Валюту пользователя определите сами.
+# try:
 
-your_money = float(input())
-convert_USD = your_money / 72.88
-convert_EUR = your_money / 85.46
-convert_CHF = your_money / 78.18
-convert_GBP = your_money / 100.14
-convert_CNY = your_money / 11.27
-print('Ты ввёл ', your_money, 'RUB')
-print('Конвертированная сумма в USD = ', round(convert_USD, 2))
-print('Конвертированная сумма в EUR = ', round(convert_EUR, 2))
-print('Конвертированная сумма в CHF = ', round(convert_CHF, 2))
-print('Конвертированная сумма в GBP = ', round(convert_GBP, 2))
-print('Конвертированная сумма в CNY = ', round(convert_CNY, 2))
+
+def main():
+    your_money = input_func()
+    convert_usd = your_money / 72.88
+    convert_eur = your_money / 85.46
+    convert_chf = your_money / 78.18
+    convert_gbp = your_money / 100.14
+    convert_cny = your_money / 11.27
+    print('Ты ввёл ', your_money, 'RUB')
+    # print('Конвертированная сумма в USD = ', round(convert_usd, 2))
+    print('Конвертированная сумма в USD = ', round(convert_usd, 2))
+    print('Конвертированная сумма в EUR = ', round(convert_eur, 2))
+    print('Конвертированная сумма в CHF = ', round(convert_chf, 2))
+    print('Конвертированная сумма в GBP = ', round(convert_gbp, 2))
+    print('Конвертированная сумма в CNY = ', round(convert_cny, 2))
+
+
+def input_func():
+    your_money = int(input('Введите количество RUB: '))
+    if your_money <= 0:
+        print('Введите положительное число.')
+        while True:
+            your_money = input('Введите соличество RUB: ').strip()
+            if your_money.isdigit():
+                your_money = int(your_money)
+                break
+            else:
+                if not your_money:
+                    print('Вы ввели пустое поле. Введите число.')
+                else:
+                    print('Вы ввели не число. Введите число.')
+    return your_money
