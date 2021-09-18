@@ -6,7 +6,7 @@
 #                 "конвертированная сумма в USD = int"
 #     3. Валюту пользователя определите сами.
 
-
-
-your_money = input(int())
-print('Ты ввёл ', your_money, currency())
+your_money = int(input())
+your_money = your_money / 72.88
+print('Ты ввёл ', your_money, 'RUB')
+print('конвертированная сумма в USD = ', your_money)
