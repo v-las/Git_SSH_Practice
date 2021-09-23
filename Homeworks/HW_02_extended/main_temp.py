@@ -45,14 +45,29 @@ def compare_function(x, y, e, c):
         return result, True
 
 
+def _input(err_val):
+    if err_val == '':
+        print('empty')
+        return err_val
+
+        except TypeError:
+            print(1)
+            break
+        except ValueError:
+            print(2)
+            break
+    return c
+
+
 while True:
     print('Испытайте удачу у нас!', 'Пока бесплатно!', 'У Вас есть 10 попыток угадать случайное число.',
           'Загадайте число от 1 до 5: ', sep='\n')
-    # c = int(input())
+    # c = _input()
     start = time.time()
     for i in range(10):
         a, b = random.randint(1, 5), random.randint(1, 5)
-        c = int(input())
+        c = input(_input())
+
         compare = compare_function(a, b, c, 9 - i)
         if compare[1]:
             print(compare[0])
