@@ -14,3 +14,35 @@
 #     7. После сообщеня об ошибке, скрипт должен автоматом вернуться к шагу 1.
 #     8. Валюту пользователя определите сами.
 
+# def rate_currency(keys, amount):
+#     # num = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
+#     listRes = []
+#     for i in keys:
+#         try:
+#             listRes.append((round((amount/['USDRUB'])*keys[i], 1)))
+#
+#     return list
+
+
+jsonData = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
+keys = list(jsonData.keys())
+values = list(jsonData.values())
+jsonData.items()
+print(jsonData, keys, '|', values, '|', list(jsonData.items()))
+# def rate_currency(keys, amount):
+# num = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
+jsonData = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
+keys = jsonData.keys()
+values = jsonData.values()
+# jsonData.items()
+listRes = []
+# for i in keys:
+#     listRes.append((round((30/3['USDRUB'])*keys[i], 1)))
+#     print(listRes)
+amount = 1000
+currency = 'USD'+'CAD'
+item = ('USDCAD', 1.227148)
+# rate = item[currency]
+# rate = next(key for key in item if currency in item[key])
+rate = next(filter(lambda x: currency in item[x], item))
+print(rate)

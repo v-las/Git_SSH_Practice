@@ -37,21 +37,6 @@ def check_amount(amount):
         return print('your amount', amount), amount
 
 
-# def rate_currency(rate_list, amount):
-#     num = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
-#     listRes = []
-#     for i in rate_list:
-#         try:
-#             listRes.append((round((amount/[]))))
-#
-#     return list
-
-
-jsonData = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
-keys = jsonData.keys()
-values = jsonData.values()
-jsonData.items()
-print(keys, '|', values, '|', jsonData.items())
 while True:
     your_currency = input('choose ')
     # currency = check_currency(your_currency)
@@ -60,6 +45,6 @@ while True:
     your_amount = input('amount ')
     if not check_amount(your_amount)[1]:
         continue
-    s = rate_currency(currency_list, your_amount)
+    # s = rate_currency(currency_list, your_amount)
     print('entered {} {}'.format(your_amount, 'USD'))
     # print('converted sum {} = {}'.format(currency_list[your_currency], s))
