@@ -59,8 +59,9 @@ while True:
     for i in range(10):
         a, b = random.randint(1, 5), random.randint(1, 5)
         c = int(input())
-        compare = compare_function(a, b, c, 9 - i)
-        if compare[1]:
+        # compare = compare_function(a, b, c, 9 - i)
+        # if compare[1]:
+        if compare_function(a, b, c, 9 - i)[1]:
             print(compare[0])
             break
         else:
