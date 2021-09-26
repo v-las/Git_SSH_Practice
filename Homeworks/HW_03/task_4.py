@@ -14,29 +14,36 @@
 #     7. После сообщеня об ошибке, скрипт должен автоматом вернуться к шагу 1.
 #     8. Валюту пользователя определите сами.
 
-# def rate_currency(keys, amount):
-#     # num = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
-#     listRes = []
-#     for i in keys:
-#         try:
-#             listRes.append((round((amount/['USDRUB'])*keys[i], 1)))
-#
-#     return list
-# input().upper()
-curr_input = 'CAD'
-amount_usd = 100
-jsonData = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
-keys = list(jsonData.keys())
-values = list(jsonData.values())
-# jsonData.items()
-# print(jsonData, keys, values, list(jsonData.items()))
-# cad_string = keys[3:]
-# print(cad_string)
-# for currency in keys:
-#     if currency[3:] == curr_input:
-#         curr_index = keys.index(currency)
-#         print(curr_index)
-#         print(amount_usd * values[curr_index])
+def check_currency(number):
+    if number == '':
+        result = 'empty currency'
+        return result, False
+    try:
+        number = int(number)
+    except ValueError:
+        return print('NaN currency'), False
+    if number < 1:
+        return print('above 0 currency'), False
+    elif number > 4:
+        return print('under 5 currency'), False
+    else:
+        currency_index = number - 1
+        return print('your currency', number), currency_index
+
+
+def check_amount(amount):
+    if amount == '':
+        return print('empty amount'), False
+    try:
+        amount = float(amount)
+    except ValueError:
+        return print('NaN amount'), False
+    if amount <= 0:
+        return print('above 0 amount'), False
+    else:
+        return print('your amount', amount), amount
+
+
 def get_rate_value_from(parsed_json, currency_input):
     currency_key_list = list(parsed_json.keys())
     rate_values_list = list(parsed_json.values())
@@ -45,36 +52,19 @@ def get_rate_value_from(parsed_json, currency_input):
             # curr_index = currency_key_list.index(currency)
             rate_value = rate_values_list[currency_key_list.index(currency)]
             return rate_value
-print(get_currency_from_keys(jsonData, curr_input))
-# def get_rate_from_values(parsed_json, currency_index):
-#     rate_values_list = list(parsed_json.values())
 
 
+# curr_input = input().upper()
+# amount_usd = float(input())
 
-# for
-# get_cad = amount_usd * values[0]
-# print(get_cad)
-# get_chf = amount_usd * values[1]
-# print(get_chf)
-# get_eur = amount_usd * values[2]
-# print(get_eur)
-# get_gbp = amount_usd * values[3]
-# print(get_gbp)
-
-# # def rate_currency(keys, amount):
-# # num = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
-# jsonData = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
-# keys = jsonData.keys()
-# values = jsonData.values()
-# # jsonData.items()
-# listRes = []
-# # for i in keys:
-# #     listRes.append((round((30/3['USDRUB'])*keys[i], 1)))
-# #     print(listRes)
-# amount = 1000
-# currency = 'USD'+'CAD'
-# item = ('USDCAD', 1.227148)
-# # rate = item[currency]
-# # rate = next(key for key in item if currency in item[key])
-# rate = next(filter(lambda x: currency in item[x], item))
-# print(rate)
+json_data = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
+while True:
+    your_currency = input('choose ')
+    # currency = check_currency(your_currency)
+    if not check_currency(your_currency)[1]:
+        continue
+    your_amount = input('amount ')
+    if not check_amount(your_amount)[1]:
+        continue
+    get_rate = check_amount(your_amount) * get_rate_value_from(json_data, your_currency)
+    print(round(get_rate, 2))
