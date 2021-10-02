@@ -38,7 +38,7 @@ def input_func():
     if your_money <= 0:
         print('Введите положительное число.')
         while True:
-            your_money = input('Введите соличество RUB: ').strip()
+            your_money = input('Введите количество RUB: ').strip()
             if your_money.isdigit():
                 your_money = int(your_money)
                 break

@@ -14,57 +14,61 @@
 #     7. После сообщеня об ошибке, скрипт должен автоматом вернуться к шагу 1.
 #     8. Валюту пользователя определите сами.
 
-def check_currency(number):
-    if number == '':
-        result = 'empty currency'
-        return result, False
-    try:
-        number = int(number)
-    except ValueError:
-        return print('NaN currency'), False
-    if number < 1:
-        return print('above 0 currency'), False
-    elif number > 4:
-        return print('under 5 currency'), False
+
+def search_currency(contraction, parsed_json):
+    currency_key_list = list(parsed_json.keys())
+    rate_values_list = list(parsed_json.values())
+    if contraction == '':
+        result = 'Empty input. Please, enter currency from a list'
+        return False, result
+    currency = str('USD' + contraction)
+    if currency not in currency_key_list:
+        result = 'Invalid input. Please, enter currency from a list'
+        return False, result
     else:
-        currency_index = number - 1
-        return print('your currency', number), currency_index
+        result = rate_values_list[currency_key_list.index(currency)]
+        return True, result
 
 
 def check_amount(amount):
     if amount == '':
-        return print('empty amount'), False
+        result = 'Empty input. Please, enter an amount'
+        return False, result
     try:
-        amount = float(amount)
+        amount = abs(float(amount))
     except ValueError:
-        return print('NaN amount'), False
+        result = 'It\'s not a number. Please, enter an amount'
+        return False, result
     if amount <= 0:
-        return print('above 0 amount'), False
+        result = 'We can\'t convert 0 USD. Please, enter an amount'
+        return False, result
     else:
-        return print('your amount', amount), amount
+        return True, amount
 
-
-def get_rate_value_from(parsed_json, currency_input):
-    currency_key_list = list(parsed_json.keys())
-    rate_values_list = list(parsed_json.values())
-    for currency in currency_key_list:
-        if currency[3:] == currency_input:
-            # curr_index = currency_key_list.index(currency)
-            rate_value = rate_values_list[currency_key_list.index(currency)]
-            return rate_value
-
-
-# curr_input = input().upper()
-# amount_usd = float(input())
 
 json_data = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
 while True:
-    your_currency = input('choose ')
-    # currency = check_currency(your_currency)
-    if not check_currency(your_currency)[1]:
-        continue
-    your_amount = input('amount ')
-    if not check_amount(your_amount)[1]:
-        continue
-    get_rate = check_amount(your_amount) * get_rate_value_from(json_data, your_currency)
-    print(round(get_rate, 2))
+    print('You want to convert your USD. Choose the currency:')
+    for i in list(json_data.keys()):
+        print(i[3:], sep=', ')
+    while True:
+        your_currency = input('Enter your currency here: ').upper()
+        got_rate = search_currency(your_currency, json_data)
+        if not got_rate[0]:
+            print(got_rate[1])
+            continue
+        else:
+            print('You want to convert USD into {}. Today rate - {}'.format(your_currency, got_rate[1]))
+            break
+    while True:
+        print('How much money you need to convert?')
+        your_amount = input('Enter your amount here: ')
+        got_amount = check_amount(your_amount)
+        if not got_amount[0]:
+            print(got_amount[1])
+            continue
+        else:
+            converted = got_rate[1] * got_amount[1]
+            print("You'll get {} {} for your {} USD".format(round(converted, 2), your_currency, round(got_amount[1], 2)))
+            break
+    print('=====')

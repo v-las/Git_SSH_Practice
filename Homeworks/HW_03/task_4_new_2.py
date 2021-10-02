@@ -10,13 +10,12 @@ def check_currency(contraction):
 def search_currency(contraction, parsed_json):
     currency_key_list = list(parsed_json.keys())
     rate_values_list = list(parsed_json.values())
-    for currency in currency_key_list:
-        if currency[3:] == contraction:
-            result = rate_values_list[currency_key_list.index(currency)]
-            return True, result
-        else:
-            result = 'asdasd'
-            return False, result
+    if 'USD' + contraction in currency_key_list:
+        result = rate_values_list[currency_key_list.index('USD' + contraction)]
+        return True, result
+    else:
+        result = 'invalid ent'
+        return False, result
 
 def check_amount(amount):
     if amount == '':
@@ -33,9 +32,7 @@ def check_amount(amount):
 
 json_data = {"USDCAD": 1.227148, "USDCHF": 0.935689, "USDEUR": 0.837953, "USDGBP": 0.716673}
 your_currency = input('choose ')
-print('1', your_currency)
 got_currency = check_currency(your_currency)
-print('2', got_currency[1])
 if not got_currency[0]:
     print('3 fail', got_currency[1])
 got_rate = search_currency(got_currency[1], json_data)
