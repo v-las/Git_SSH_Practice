@@ -11,13 +11,12 @@ def search_currency(contraction, parsed_json):
     currency_key_list = list(parsed_json.keys())
     rate_values_list = list(parsed_json.values())
     for currency in currency_key_list:
-        if currency[3:] != contraction:
-            result = 'invalid ent'
-            return False, result
-        else:
+        if currency[3:] == contraction:
             result = rate_values_list[currency_key_list.index(currency)]
             return True, result
-
+        else:
+            result = 'asdasd'
+            return False, result
 
 def check_amount(amount):
     if amount == '':
