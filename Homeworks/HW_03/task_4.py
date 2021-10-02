@@ -21,8 +21,9 @@ import json
 
 def main():
     json_key_list = list(json_dict.keys())
+    json_key_list[0] = 'USDUSD'
     while True:
-        print('You want to convert your USD. Choose the currency from the list:')
+        print('You want to convert your RUB. Choose the currency from the list:')
         for i in json_key_list:
             print(i[3:], sep=', ')
         your_currency = input('Enter your currency here: ').upper()
@@ -32,7 +33,7 @@ def main():
             input('Press enter to continue')
             continue
         else:
-            print('You want to convert USD into {}. Today rate - {}'.format(your_currency, got_rate[1]))
+            print('You want to convert RUB into {}. Today rate - {}'.format(your_currency, got_rate[1]))
             break
     while True:
         print('How much money you need to convert?')
@@ -42,9 +43,9 @@ def main():
             print(got_amount[1])
             continue
         else:
-            converted = got_rate[1] * got_amount[1]
+            converted = got_amount[1] / got_rate[1]
             print(
-                "You'll get {} {} for your {} USD".format(round(converted, 2), your_currency, round(got_amount[1], 2)))
+                "You'll get {} {} for your {} RUB".format(round(converted, 2), your_currency, round(got_amount[1], 2)))
             break
     input('Press enter to continue')
     print('=====')
@@ -65,6 +66,7 @@ def get_json():
 
 def search_currency(contraction, parsed_json):
     currency_key_list = list(parsed_json.keys())
+    currency_key_list[0] = 'USDUSD'
     rate_values_list = list(parsed_json.values())
     if contraction == '':
         result = 'Empty input. Please, enter currency from a list'
@@ -73,8 +75,11 @@ def search_currency(contraction, parsed_json):
     if currency not in currency_key_list:
         result = 'Invalid input. Please, enter currency from a list'
         return False, result
+    elif currency != 'USDUSD':
+        result = rate_values_list[0] / rate_values_list[currency_key_list.index(currency)]
+        return True, result
     else:
-        result = rate_values_list[currency_key_list.index(currency)]
+        result = rate_values_list[0]
         return True, result
 
 

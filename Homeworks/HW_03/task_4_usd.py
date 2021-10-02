@@ -80,4 +80,3 @@ def check_amount(amount):
 json_dict = get_json()
 while True:
     main()
-json_response = {'USDRUB': 72.672604, 'USDEUR': 0.862404, 'USDCHF': 0.930533, 'USDGBP': 0.73828, 'USDCNY': 6.446704}
