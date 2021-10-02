@@ -51,14 +51,14 @@ def main():
 
 
 def get_json():
-    # access_key = '4505e7fd8444688bd3cca12508ba4d95'
-    # url = 'http://api.currencylayer.com/live'
-    # head = {'access_key': access_key,'currencies': }
-    # json_request = requests.get(url, params=head)
-    # request_text = json_request.text
-    # request_list = json.loads(request_text)
-    request_list = json.loads((requests.get('http://api.currencylayer.com/live',
-                                            params={'access_key': '4505e7fd8444688bd3cca12508ba4d95'})).text)
+    access_key = '4505e7fd8444688bd3cca12508ba4d95'
+    url = 'http://api.currencylayer.com/live'
+    head = {'access_key': access_key, 'currencies': 'RUB,EUR,CHF,GBP,CNY', 'source': 'USD', 'format': '1'}
+    json_request = requests.get(url, params=head)
+    request_text = json_request.text
+    request_list = json.loads(request_text)
+    # request_list = json.loads((requests.get('http://api.currencylayer.com/live',
+    #                                         params={'access_key': '4505e7fd8444688bd3cca12508ba4d95'})).text)
     json_response = request_list.get('quotes')
     return json_response
 

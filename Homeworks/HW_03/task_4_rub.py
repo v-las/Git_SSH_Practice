@@ -33,17 +33,17 @@ def main():
     print('=====')
 
 
-def get_json():
-    # access_key = '4505e7fd8444688bd3cca12508ba4d95'
-    # url = 'http://api.currencylayer.com/live'
-    # head = {'access_key': access_key,'currencies': }
-    # json_request = requests.get(url, params=head)
-    # request_text = json_request.text
-    # request_list = json.loads(request_text)
-    request_list = json.loads((requests.get('http://api.currencylayer.com/live',
-                                            params={'access_key': '4505e7fd8444688bd3cca12508ba4d95'})).text)
-    json_response = request_list.get('quotes')
-    return json_response
+# def get_json():
+#     # access_key = '4505e7fd8444688bd3cca12508ba4d95'
+#     # url = 'http://api.currencylayer.com/live'
+#     # head = {'access_key': access_key,'currencies': }
+#     # json_request = requests.get(url, params=head)
+#     # request_text = json_request.text
+#     # request_list = json.loads(request_text)
+#     request_list = json.loads((requests.get('http://api.currencylayer.com/live',
+#                                             params={'access_key': '4505e7fd8444688bd3cca12508ba4d95'})).text)
+#     json_response = request_list.get('quotes')
+#     return json_response
 
 
 def search_currency(contraction, parsed_json):
@@ -77,7 +77,6 @@ def check_amount(amount):
         return True, amount
 
 
-json_dict = get_json()
+json_dict = {'USDRUB': 72.672604, 'USDEUR': 0.862404, 'USDCHF': 0.930533, 'USDGBP': 0.73828, 'USDCNY': 6.446704}
 while True:
     main()
-json_response = {'USDRUB': 72.672604, 'USDEUR': 0.862404, 'USDCHF': 0.930533, 'USDGBP': 0.73828, 'USDCNY': 6.446704}
