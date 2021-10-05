@@ -3,34 +3,31 @@ import json
 
 
 def main():
+    json_dict = get_json()
+    # json_dict = {'USDRUB': 72.880972, 'USDEUR': 0.861065, 'USDCHF': 0.929301, 'USDGBP': 0.737145, 'USDCNY': 6.446701}
     json_key_list = list(json_dict.keys())
+    json_values_list = list(json_dict.values())
     json_key_list[0] = 'USDUSD'
+    print('You want to convert your RUB. Choose the currency from the list:')
     while True:
-        print('You want to convert your RUB. Choose the currency from the list:')
-        for i in json_key_list:
-            print(i[3:], sep=', ')
-        your_currency = input('Enter your currency here: ').upper()
-        got_rate = search_currency(your_currency, json_dict)
+        your_currency = input(currency_input(json_key_list)).upper()
+        got_rate = search_currency(your_currency, json_key_list, json_values_list)
         if not got_rate[0]:
-            print(got_rate[1])
-            input('Press enter to continue')
+            print('-', got_rate[1], '-', sep="\n")
             continue
         else:
-            print('You want to convert RUB into {}. Today rate - {}'.format(your_currency, got_rate[1]))
+            print('-', 'You want to convert RUB into {}. Today rate - {}'.format(your_currency, got_rate[1]), sep="\n")
             break
     while True:
-        print('How much money you need to convert?')
-        your_amount = input('Enter your amount here: ')
-        got_amount = check_amount(your_amount)
+        got_amount = check_amount(input(amount_input()))
         if not got_amount[0]:
-            print(got_amount[1])
+            print('-', got_amount[1], '-', sep="\n")
             continue
         else:
             converted = got_amount[1] / got_rate[1]
-            print(
-                "You'll get {} {} for your {} RUB".format(round(converted, 2), your_currency, round(got_amount[1], 2)))
+            print('-', "You'll get {} {} for your {} RUB"
+                  .format(round(converted, 2), your_currency, round(got_amount[1], 2)), sep="\n")
             break
-    input('Press enter to continue')
     print('=====')
 
 
@@ -47,23 +44,35 @@ def get_json():
     return json_response
 
 
-def search_currency(contraction, parsed_json):
-    currency_key_list = list(parsed_json.keys())
-    currency_key_list[0] = 'USDUSD'
-    rate_values_list = list(parsed_json.values())
+def currency_input(currency_list):
+    currency_line = []
+    for i in currency_list:
+        currency_line.append(i[3:])
+    print('', *currency_line, '', sep="|")
+    result = 'Enter your currency here: '
+    return result
+
+
+def search_currency(contraction, currency_list, rate_list):
     if contraction == '':
         result = 'Empty input. Please, enter currency from a list'
         return False, result
     currency = str('USD' + contraction)
-    if currency not in currency_key_list:
+    if currency not in currency_list:
         result = 'Invalid input. Please, enter currency from a list'
         return False, result
     elif currency != 'USDUSD':
-        result = rate_values_list[0] / rate_values_list[currency_key_list.index(currency)]
+        result = rate_list[0] / rate_list[currency_list.index(currency)]
         return True, result
     else:
-        result = rate_values_list[0]
+        result = rate_list[0]
         return True, result
+
+
+def amount_input():
+    print('How much money you need to convert?')
+    result = 'Enter your amount here: '
+    return result
 
 
 def check_amount(amount):
@@ -76,12 +85,11 @@ def check_amount(amount):
         result = 'It\'s not a number. Please, enter an amount'
         return False, result
     if amount <= 0:
-        result = 'We can\'t convert 0 USD. Please, enter an amount'
+        result = 'We can\'t convert 0 RUB. Please, enter an amount'
         return False, result
     else:
         return True, amount
 
 
-json_dict = get_json()
 while True:
     main()
