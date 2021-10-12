@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da8aae6f-9acc-4b92-97c1-78903bc1fe50" name="Changes" comment="" />
+    <list default="true" id="da8aae6f-9acc-4b92-97c1-78903bc1fe50" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Exercises/pythonProject/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exercises/pythonProject/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exercises/pythonProject/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exercises/pythonProject/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exercises/pythonProject/.idea/pythonProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exercises/pythonProject/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exercises/pythonProject/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Homeworks/HW_03/temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Homeworks/HW_03/temp.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

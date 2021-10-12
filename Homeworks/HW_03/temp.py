@@ -3,12 +3,12 @@ import json
 
 
 def main():
-    # json_dict = get_json()
-    json_dict = {'USDRUB': 72.880972, 'USDEUR': 0.861065, 'USDCHF': 0.929301, 'USDGBP': 0.737145, 'USDCNY': 6.446701}
+    json_dict = get_json()
+    # json_dict = {'USDRUB': 72.880972, 'USDEUR': 0.861065, 'USDCHF': 0.929301, 'USDGBP': 0.737145, 'USDCNY': 6.446701}
     json_key_list = list(json_dict.keys())
     json_values_list = list(json_dict.values())
     json_key_list[0] = 'USDUSD'
-    print('...', 'You want to convert your RUB. Choose the currency from the list:', sep="\n")
+    print('You want to convert your RUB. Choose the currency from the list:')
     while True:
         your_currency = input(currency_input(json_key_list)).upper()
         got_rate = search_currency(your_currency, json_key_list, json_values_list)
@@ -31,17 +31,17 @@ def main():
     print('=====')
 
 
-# def get_json():
-#     access_key = '4505e7fd8444688bd3cca12508ba4d95'
-#     url = 'http://api.currencylayer.com/live'
-#     head = {'access_key': access_key, 'currencies': 'RUB,EUR,CHF,GBP,CNY', 'source': 'USD', 'format': '1'}
-#     json_request = requests.get(url, params=head)
-#     request_text = json_request.text
-#     request_list = json.loads(request_text)
-#     # request_list = json.loads((requests.get('http://api.currencylayer.com/live',
-#     #                                         params={'access_key': '4505e7fd8444688bd3cca12508ba4d95'})).text)
-#     json_response = request_list.get('quotes')
-#     return json_response
+def get_json():
+    access_key = '4505e7fd8444688bd3cca12508ba4d95'
+    url = 'http://api.currencylayer.com/live'
+    head = {'access_key': access_key, 'currencies': 'RUB,EUR,CHF,GBP,CNY', 'source': 'USD', 'format': '1'}
+    json_request = requests.get(url, params=head)
+    request_text = json_request.text
+    request_list = json.loads(request_text)
+    # request_list = json.loads((requests.get('http://api.currencylayer.com/live',
+    #                                         params={'access_key': '4505e7fd8444688bd3cca12508ba4d95'})).text)
+    json_response = request_list.get('quotes')
+    return json_response
 
 
 def currency_input(currency_list):
