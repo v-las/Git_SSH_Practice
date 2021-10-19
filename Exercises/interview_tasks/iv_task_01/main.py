@@ -1,33 +1,24 @@
-head_1 = head_2 = head_3 = []
-head_roll_1 = ['forw', 'back', 'left', 'right']
-head_roll_2 = ['back', 'left', 'right']
-head_roll_3 = ['right', 'left', 'forw']
-time = 180
-# def head_roll_func(roll_list, whole_time, tick):
-#     new_list = []
-#     while whole_time:
-#         for i in roll_list:
-#             result = str(whole_time) + i
-#             new_list.append(result)
-#             whole_time -= tick
-#             if not whole_time:
-#                 break
-#     return new_list
-def head_roll_func(roll_list, whole_time, tick):
-    full_list = [i for i in range(180)]
-    new_list = []
-    while whole_time:
-        for i in roll_list:
-            result = str(whole_time) + i
-            new_list.append(result)
-            whole_time -= tick
-            if not whole_time:
-                break
-            for n, i in enumerate(full_list):
-                if i == whole_time:
-                    full_list[n] = result
-            # print(new_list)
-    return full_list
-print(head_roll_func(head_roll_1, time, 10))
-print(head_roll_func(head_roll_2, time, 15))
-print(head_roll_func(head_roll_3, time, 20))
+def tick_count(turns, time):
+    ticks = [i for i in range(180)]
+    for i in ticks:
+        if ticks[i] // time == ticks[i] / time:
+            turns.append(turns.pop(0))
+        ticks[i] = str(ticks[i]) + turns[0]
+    return ticks
+
+
+head_1_time = 10
+head_2_time = 15
+head_3_time = 20
+head_1_turns = ['r', 'f', 'b', 'l']
+head_2_turns = ['r', 'b', 'l']
+head_3_turns = ['f', 'r', 'l']
+head_1_workout = tick_count(head_1_turns, head_1_time)
+head_2_workout = tick_count(head_2_turns, head_2_time)
+head_3_workout = tick_count(head_3_turns, head_3_time)
+new_list = []
+for i in head_1_workout:
+    i = int(i.translate({ord(i): None for i in 'fblr'}))
+    if head_1_workout[i] == head_2_workout[i] == head_3_workout[i]:
+        new_list.append(i)
+print("Три головы смотрели в одну сторону", len(new_list), "минут.")
