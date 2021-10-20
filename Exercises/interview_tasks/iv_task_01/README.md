@@ -5,7 +5,8 @@
 - Третья голова 20 минут смотрит направо, 20 минут налево, 20 минут вперёд, снова направо и так далее по циклу.
 - Сколько минут все три головы смотрели в одну сторону одновременно? Опишите решение.
 
-# Решение ([main.py](https://github.com/v-las/Python/blob/main/Exercises/interview_tasks/iv_task_01/main.py))
+# Решение
+Только код [здесь](https://github.com/v-las/Python/blob/main/Exercises/interview_tasks/iv_task_01/pure_code.py)
 ```sh
 def tick_count(ticks, turns, time):
     """
