@@ -11,7 +11,7 @@ def tick_count(ticks, turns, time):
     """
     ticks_copy = ticks.copy()
     for i in list(ticks_copy):
-        if ticks_copy[i] // time == ticks_copy[i] / time != 0:
+        if ticks_copy[i] % time == 0 and i != 0:
             turns.append(turns.pop(0))
         ticks_copy[i] = str(ticks_copy[i]) + turns[0]
     return ticks_copy
