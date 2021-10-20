@@ -10,7 +10,7 @@ def tick_count(turns, time):
     """
     ticks = [i for i in range(180)]
     for i in ticks:
-            # print(ticks[i])
+        # print(ticks[i])
         if ticks[i] // time == ticks[i] / time:
             # print(ticks[i] // time)
             # print(ticks[i] / time)
@@ -46,4 +46,3 @@ for i in head_1_workout:
     print(minute_list)
 # Вывод в консоль подсчитанных элементов листа (минут)
 print("Три головы смотрели в одну сторону", len(minute_list), "минут.")
-
