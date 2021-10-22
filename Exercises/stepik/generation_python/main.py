@@ -7,4 +7,7 @@
 # a = a // 100
 # print(a)
 
-
+n = int(input())
+k = int(input())
+print(k // n)
+print(k % n)
