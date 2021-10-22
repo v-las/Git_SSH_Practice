@@ -3,3 +3,8 @@
 # number = b * q ** (n - 1)
 # print(number)
 
+# a = int(input())
+# a = a // 100
+# print(a)
+
+
