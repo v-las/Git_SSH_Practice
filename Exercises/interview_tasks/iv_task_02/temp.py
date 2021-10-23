@@ -1,25 +1,13 @@
-def path_count(graph, )
-
-
-for x in g:
-    for y in g.index(x):
-        mass = []
-        if y:
-            g[y]
-            break
-        else:
-            print(y)
-
-
-graph = {
-    'A': {'B', 'C', 'D', 'E'},
-    'B': {'A', 'D', 'E'},
-    'C': {'A', 'F'},
-    'D': {'B'},
-    'E': {'B', 'F'},
-    'F': {'C', 'E'}
-    'G':
-    'H':
-    'I':
-    'J':
-}
+graph = g = [
+    {'A': 1},
+    {'B': ['A' + 'C']},
+    {'C': ['A' + 'D']},
+    {'D': ['A']},
+    {'E': ['A' + 'D']},
+    {'F': ['B' + 'G']},
+    {'G': ['C']},
+    {'H': ['D' + 'G']},
+    {'I': ['E']},
+    {'J': ['F' + 'G' + 'H' + 'I']}
+]
+print(g[9]['J'])

@@ -17,18 +17,14 @@ def tick_count(ticks, turns, time):
     return ticks_copy
 
 
-# Создаётся список минут в трёх часах
-head_ticks = [i for i in range(180)]
+head_ticks = [i for i in range(180)]  # Создаётся список минут в трёх часах
 # Для каждой головы: время поворота и направления отправляются в функцию
 head_1_workout = tick_count(head_ticks, ['f', 'b', 'l', 'r'], 10)
 head_2_workout = tick_count(head_ticks, ['b', 'l', 'r'], 15)
 head_3_workout = tick_count(head_ticks, ['r', 'l', 'f'], 20)
-# Итерируется список для поиска совпадений
 minute_list = []
-for i in head_ticks:
-    # Сравниваются между собой списки трёх голов
-    if head_1_workout[i] == head_2_workout[i] == head_3_workout[i]:
-        # Совпадения (минуты с одинаковым направлением) добавляются в лист
-        minute_list.append(i)
+for i in head_ticks:  # Итерируется список для поиска совпадений
+    if head_1_workout[i] == head_2_workout[i] == head_3_workout[i]:  # Сравниваются между собой списки трёх голов
+        minute_list.append(i)  # Совпадения (минуты с одинаковым направлением) добавляются в лист
 # Вывод в консоль подсчитанных элементов листа (минут)
 print("Три головы смотрели в одну сторону", len(minute_list), "минут.")
