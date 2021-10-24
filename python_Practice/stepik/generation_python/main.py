@@ -53,3 +53,8 @@
 
 # s = input()
 # print(input(), input(), input(), sep=s)
+
+n = int(input())
+print(n, n + 1, sep='\n')
+n = n + 1
+print(n + 1)
