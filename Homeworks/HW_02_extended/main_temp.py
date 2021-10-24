@@ -2,73 +2,75 @@ import random
 import time
 
 
-def compare_function(x, y, e, c):
+def check_input(input_number):
+    try:
+        input_number = int(input_number)
+    except ValueError:
+        return "not num", False
+    if 0 < input_number:
+        return "less 0", False
+    elif input_number > 6:
+        return "more 6", False
+    else:
+        return input_number, True
+
+
+def compare_function(x, y, e, count):
     """
     Функция сравнивает введенное значение 'e' с двумя случайными - 'x' и y'.
-    Значение 'c' передаётся для подсчёта и вывода.
+    Значение 'count' передаётся для подсчёта и вывода.
     На выходе ожидается строка с результатом сравнения для вывода,
     прерывание при 'x=e=y' и продолжение ввода при других значениях
     """
-    my_order = [str(e), str(x), str(y), str(c), 'Вы загадали число ', ', которое ', 'больше ', 'меньше ', 'равно ',
-                ' и ', ', но ', 'случайного числа ', 'случайному числу ', 'случайных чисел ', '. Осталось попыток: ']
-    # for i in enumerate(my_order):  # Вывод в консоль значений списка my_order с порядковой нумерацией
-    #     print(i)
-    # todo не осталось попыток
     if x < e < y:
-        result = ('{4}{0}{5}{6}{11}{1}{10}{7}{11}{2}{14}{3}'.format(*my_order))
+        result = ('Вы загадали число {0}, которое больше случайного числа {1}, но меньше случайного числа {2}. '
+                  'Осталось попыток: {3}'.format(str(e), str(x), str(y), str(count)))
         return result, False
     elif x > e > y:
-        result = ('{4}{0}{5}{7}{11}{1}{10}{6}{11}{2}{14}{3}'.format(*my_order))
+        result = ('Вы загадали число {0}, которое меньше случайного числа {1}, но больше случайного числа {2}. '
+                  'Осталось попыток: {3}'.format(str(e), str(x), str(y), str(count)))
         return result, False
     elif x < e > y:
-        result = ('{4}{0}{5}{6}{13}{1}{9}{2}{14}{3}'.format(*my_order))
+        result: str = ('Вы загадали число {0}, которое больше случайных чисел {1} и {2}. '
+                       'Осталось попыток: {3}'.format(str(e), str(x), str(y), str(count)))
         return result, False
     elif x > e < y:
-        result = ('{4}{0}{5}{7}{13}{1}{9}{2}{14}{3}'.format(*my_order))
+        result: str = ('Вы загадали число {0}, которое меньше случайных чисел {1} и {2}. '
+                       'Осталось попыток: {3}'.format(str(e), str(x), str(y), str(count)))
         return result, False
     elif x < e == y:
-        result = ('{4}{0}{5}{6}{11}{1}{9}{8}{12}{2}{14}{3}'.format(*my_order))
+        result: str = ('Вы загадали число {0}, которое больше случайного числа {1}, и равно случайному числу {2}. '
+                       'Осталось попыток: {3}'.format(str(e), str(x), str(y), str(count)))
         return result, False
     elif x == e < y:
-        result = ('{4}{0}{5}{8}{12}{1}{9}{7}{11}{2}{14}{3}'.format(*my_order))
+        result: str = ('Вы загадали число {0}, которое равно случайному числу {1}, и меньше случайного числа {2}. '
+                       'Осталось попыток: {3}'.format(str(e), str(x), str(y), str(count)))
         return result, False
     elif x > e == y:
-        result = ('{4}{0}{5}{7}{11}{1}{9}{8}{12}{2}{14}{3}'.format(*my_order))
+        result: str = ('Вы загадали число {0}, которое меньше случайного числа {1}, и равно случайному числу {2}. '
+                       'Осталось попыток: {3}'.format(str(e), str(x), str(y), str(count)))
         return result, False
     elif x == e > y:
-        result = ('{4}{0}{5}{8}{12}{1}{9}{6}{11}{2}{14}{3}'.format(*my_order))
+        result: str = ('Вы загадали число {0}, которое равно случайному числу {1}, и больше случайного числа {2}. '
+                       'Осталось попыток: {3}'.format(str(e), str(x), str(y), str(count)))
         return result, False
     elif x == e == y:
-        my_order[3] = str(10 - c)
-        result = ('Оу, Удача! Поздравляю! {4}{0}{5}{8}случайным числам {1}{9}{2}! '
-                  'Количество попыток: {3}'.format(*my_order))
+        result: str = ('Оу, Удача! Поздравляю! Вы загадали число {0}, которое равно случайным числам {1} и {2}! '
+                       'Количество попыток: {3}'.format(str(e), str(x), str(y), str(10 - count)))
         return result, True
-
-
-def _input(err_val):
-    if err_val == '':
-        print('empty')
-        return err_val
-
-        except TypeError:
-            print(1)
-            break
-        except ValueError:
-            print(2)
-            break
-    return c
 
 
 while True:
     print('Испытайте удачу у нас!', 'Пока бесплатно!', 'У Вас есть 10 попыток угадать случайное число.',
           'Загадайте число от 1 до 5: ', sep='\n')
-    # c = _input()
     start = time.time()
-    for i in range(10):
+    for i in range(9):
         a, b = random.randint(1, 5), random.randint(1, 5)
-        c = input(_input())
-
-        compare = compare_function(a, b, c, 9 - i)
+        c = check_input(input())
+        if c[1]:
+            compare_function(a, b, c, 9 - i)
+        else:
+            c = check_input(input())
         if compare[1]:
             print(compare[0])
             break
