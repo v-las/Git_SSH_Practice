@@ -39,12 +39,14 @@
 # print('Цифра в позиции десятков равна', (n % 100) // 10)
 # print('Цифра в позиции единиц равна', n % 10)
 
-# Сохраню на потом
-# l, _range = list(input()), ['тысяч', 'сотен', 'десятков', 'единиц']
-# [print('Число ' + _range[i] + ' равно ' + l[i]) for i in range(4)]
-# print(*(f'Цифра в позиции {a[0]} равна {a[1]}' for a in zip(('тысяч', 'сотен', 'десятков', 'единиц'), input())), sep='\n')
+"""
+Сохраню на потом
+l, _range = list(input()), ['тысяч', 'сотен', 'десятков', 'единиц']
+[print('Число ' + _range[i] + ' равно ' + l[i]) for i in range(4)]
+print(*(f'Цифра в позиции {a[0]} равна {a[1]}' for a in zip(('тысяч', 'сотен', 'десятков', 'единиц'), input())), sep='\n')
+"""
 
-# 2.5 Номер купе
+# todo 2.5 Номер купе
 # while True:
 #     number = n = int(input())
 #     coupe_count = c = 9
@@ -54,7 +56,9 @@
 # s = input()
 # print(input(), input(), input(), sep=s)
 
-n = int(input())
-print(n, n + 1, sep='\n')
-n = n + 1
-print(n + 1)
+# n = int(input())
+# print(n, n + 1, sep='\n')
+# n = n + 1
+# print(n + 1)
+
+
