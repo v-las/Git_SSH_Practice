@@ -63,6 +63,9 @@ print(*(f'Цифра в позиции {a[0]} равна {a[1]}' for a in zip(('
 
 # print(int(input()) + int(input()) + int(input()))
 
-r = int(input())
-print('Объем =', r ** 3)
-print('Площадь полной поверхности =', 6 * r ** 2)
+# r = int(input())
+# print('Объем =', r ** 3)
+# print('Площадь полной поверхности =', 6 * r ** 2)
+
+a, b = int(input()), int(input())
+print(3 * (a + b) ** 3 + 275 * b ** 2 - 127 * a - 41)
