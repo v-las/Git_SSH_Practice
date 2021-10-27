@@ -19,11 +19,13 @@
 
 # Задача 3. Напишите программу, которая считывает три числа и подсчитывает количество чётных чисел.
 
-count = 0
-if int(input()) % 2 == 0:
-    count += 1
-if int(input()) % 2 == 0:
-    count += 1
-if int(input()) % 2 == 0:
-    count += 1
-print(count)
+# count = 0
+# if int(input()) % 2 == 0:
+#     count += 1
+# if int(input()) % 2 == 0:
+#     count += 1
+# if int(input()) % 2 == 0:
+#     count += 1
+# print(count)
+
+
